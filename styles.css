@@ -1,20 +1,14 @@
-/* charity: water Brand Colors & Fonts
+/* Charity: Water Brand Colors & Fonts
 
 Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
-
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
+- Navy Blue:   #2C3E50
+- Forest Green: #3A6B4A
+- Chestnut:    #5C2E0F
 
 Fonts:
-- Proxima Nova
-- Avenir
+- Segoe UI (professional, clean)
+- Helvetica Neue (fallback)
+- Arial (system fallback)
 
 */
 
@@ -26,19 +20,45 @@ Fonts:
 /* Set up the main font and background color for the whole page */
 body {
   background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  background-image: url('Deep-Ocean-Water_1000x667_6d44a7e8-ed43-4292-8157-3a9fb829b35a.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Make background fixed while scrolling */
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px; /* Larger base font size for better readability */
   margin: 0;
   padding: 0;
   color: #222;
+}
+
+/* Add a semi-transparent overlay to make text readable over background image */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(244, 248, 251, 0.85); /* Slight transparency overlay */
+  pointer-events: none; /* Allow clicking through the overlay */
+  z-index: -1; /* Keep behind content */
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
 section {
   background: #fff; /* White background for sections */
   border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10); /* Soft navy shadow */
+  margin: 24px auto; /* Center sections with auto margins */
   padding: 24px 16px;
+  max-width: 800px; /* Limit section width for better readability */
+}
+
+/* Increase paragraph font size for better readability */
+p {
+  font-size: 1.1em;
+  line-height: 1.6; /* Add line height for better text spacing */
 }
 
 /* Hero Section Styles */
@@ -57,44 +77,45 @@ section {
   /* Add a dark overlay for better text readability */
   /* This uses a simple linear-gradient overlay */
   background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+  background-color: rgba(44, 62, 80, 0.55); /* Navy blue overlay */
 }
 
 /* Make the headline bold and modern */
 .hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 2px;
   margin-bottom: 15px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
 }
 
 /* Style the subheadline */
 .hero p {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-top: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
 
 /* Story Section Styles */
 .story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
+  background-color: #3A6B4A; /* Forest Green */
+  color: #fff;
   text-align: center;
   padding: 30px 20px;
 }
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color: #fff; /* White for visibility on colored backgrounds */
+  font-size: 1.8em;
   margin-top: 0;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 /* Call-to-Action Section Styles */
 .call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
+  background-color: #5C2E0F; /* Chestnut */
+  color: #fff;
   text-align: center;
   padding: 30px 20px;
 }
@@ -105,21 +126,26 @@ h2 {
   max-width: 320px;
   border-radius: 10px;
   margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+  box-shadow: 0 2px 8px rgba(58, 107, 74, 0.15);
+}
+
+/* Make h2 dark on white background sections for better contrast */
+.impact-story h2 {
+  color: #2C3E50; /* Navy Blue for contrast on white background */
 }
 
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
+  background-color: #3A6B4A; /* Forest Green */
   color: #fff;
   padding: 14px 32px;
   text-decoration: none;
   border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
+  font-weight: 700;
+  font-size: 1.3em;
   margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
+  box-shadow: 0 2px 8px rgba(58, 107, 74, 0.20);
   transition: background 0.3s, transform 0.2s;
   border: none;
   cursor: pointer;
@@ -127,8 +153,25 @@ h2 {
 
 /* Change button color when hovered */
 .donate-button:hover {
-  background-color: #159A48; /* Dark Green */
+  background-color: #2C3E50; /* Navy Blue */
   transform: translateY(-2px) scale(1.04); /* Slight lift */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #f4f8fb; /* Match body background */
+  text-align: center;
+  padding: 30px 20px;
+  margin: 20px auto;
+  border-top: 2px solid #2C3E50; /* Navy border */
+  max-width: 800px; /* Match section max-width */
+}
+
+/* Footer Logo Styles */
+.footer-logo {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
 }
 
 /* Add some spacing between sections */
@@ -152,12 +195,12 @@ section {
 
   /* Make headline font size smaller so it fits on small screens */
   .hero h1 {
-    font-size: 1.4em;
+    font-size: 1.8em;
   }
 
   /* Make subheadline font size smaller */
   .hero p {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   /* Make story and call-to-action sections have less padding */
